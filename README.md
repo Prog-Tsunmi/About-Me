@@ -38,4 +38,4 @@ While this is primarily a personal repository, suggestions and improvements are 
 
 ---
 
-*Happy coding!* 🚀
+*Happy enjoying!* 🚀
