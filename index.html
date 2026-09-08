@@ -1,1 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prog-Tsunmi · GitHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #161b22;
+            border-radius: 24px;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            border: 1px solid #30363d;
+            position: relative;
+        }
+
+        .lang-selector {
+            position: absolute;
+            top: 1.8rem;
+            right: 2.8rem;
+            z-index: 10;
+        }
+
+        .lang-selector select {
+            background: #0d1117;
+            color: #e6edf3;
+            border: 1px solid #30363d;
+            border-radius: 30px;
+            padding: 0.4rem 2rem 0.4rem 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238b949e' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.8rem center;
+            background-size: 12px 8px;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .lang-selector select:hover {
+            border-color: #58a6ff;
+        }
+
+        .lang-selector select:focus {
+            outline: none;
+            border-color: #58a6ff;
+            box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.2);
+        }
+
+        .lang-selector select option {
+            background: #161b22;
+            color: #e6edf3;
+        }
+
+        .hero {
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            padding-right: 8rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #1f6feb;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 0.25rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #f0f6fc 0%, #79c0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #8b949e;
+            max-width: 680px;
+        }
+
+        .hero .emoji-wave {
+            display: inline-block;
+            animation: wave 2.5s infinite;
+            transform-origin: 70% 70%;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            20% { transform: rotate(14deg); }
+            40% { transform: rotate(-8deg); }
+            60% { transform: rotate(12deg); }
+            80% { transform: rotate(-4deg); }
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .section-title .icon {
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin: 1.5rem 0 2.5rem 0;
+        }
+
+        .category-card {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 1.5rem 1.5rem 1.25rem;
+            transition: border-color 0.2s, transform 0.15s;
+        }
+
+        .category-card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-2px);
+        }
+
+        .category-card .emoji-big {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .category-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .category-card p {
+            color: #8b949e;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .getting-started {
+            background: #0d1117;
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            margin: 2rem 0 2.5rem 0;
+            border: 1px solid #30363d;
+        }
+
+        .getting-started h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .getting-started .step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .getting-started .step:last-child {
+            margin-bottom: 0;
+        }
+
+        .getting-started .step-number {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: #1f6feb;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        .getting-started .step-content {
+            flex: 1;
+        }
+
+        .getting-started .step-content strong {
+            color: #f0f6fc;
+        }
+
+        .getting-started .step-content code {
+            background: #21262d;
+            padding: 0.15rem 0.6rem;
+            border-radius: 6px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: #ffa657;
+            border: 1px solid #30363d;
+        }
+
+        .getting-started .step-content .inline-code {
+            background: #21262d;
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: #f0883e;
+        }
+
+        .license-box {
+            background: #0d1117;
+            border-left: 4px solid #1f6feb;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0 2.5rem 0;
+        }
+
+        .license-box .license-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .license-box p {
+            color: #8b949e;
+            margin-top: 0.4rem;
+            font-size: 0.98rem;
+        }
+
+        .license-btn {
+            display: inline-block;
+            background: #1f6feb;
+            color: #fff;
+            font-weight: 600;
+            padding: 0.6rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: background 0.2s, transform 0.1s;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .license-btn:hover {
+            background: #388bfd;
+            transform: scale(1.02);
+        }
+
+        .contrib-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 1.5rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .contrib-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #c9d1d9;
+            font-size: 0.98rem;
+        }
+
+        .contrib-list li::before {
+            content: "▸";
+            color: #58a6ff;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .contact-block {
+            background: #0d1117;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0 1.5rem 0;
+            border: 1px solid #30363d;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .contact-block .email {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1rem;
+        }
+
+        .contact-block .email a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .contact-block .email a:hover {
+            border-bottom-color: #58a6ff;
+        }
+
+        .contact-block .cta-text {
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .footer {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #30363d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: #79c0ff;
+            text-decoration: underline;
+        }
+
+        .footer .footer-emoji {
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 1rem; }
+            .container { padding: 1.5rem 1.2rem; }
+            .lang-selector {
+                position: static;
+                text-align: right;
+                margin-bottom: 1rem;
+            }
+            .hero { padding-right: 0; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .categories-grid { grid-template-columns: 1fr; }
+            .getting-started { padding: 1.25rem 1.2rem; }
+            .license-box { padding: 1.25rem 1.2rem; }
+            .contact-block { flex-direction: column; align-items: flex-start; }
+            .footer { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+        }
+
+        @media (max-width: 450px) {
+            .container { padding: 1rem 0.9rem; }
+            .hero h1 { font-size: 1.6rem; }
+            .getting-started .step { flex-direction: column; gap: 0.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="lang-selector">
+        <select id="langSwitcher" aria-label="Switch language">
+            <option value="en">🇬🇧 English</option>
+            <option value="zh">🇨🇳 简体中文</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="fr">🇫🇷 Français</option>
+            <option value="yue">🇭🇰 粵語</option>
+            <option value="pt">🇵🇹 Português</option>
+            <option value="ko">🇰🇷 한국어</option>
+            <option value="ja">🇯🇵 日本語</option>
+        </select>
+    </div>
+
+    <header class="hero">
+        <div class="hero-badge" data-i18n="hero_badge">📁 Public Repository</div>
+        <h1 data-i18n="hero_title">Prog-Tsunmi's <br />GitHub Repository</h1>
+        <p data-i18n="hero_desc">
+            Welcome to my collection of useful tools and simple games!
+            This repository contains various projects I've developed for
+            learning, experimentation, and practical use.
+            <span class="emoji-wave">👋</span>
+        </p>
+    </header>
+
+    <h2 class="section-title">
+        <span class="icon">📂</span> <span data-i18n="categories_title">Project Categories</span>
+    </h2>
+    <div class="categories-grid">
+        <div class="category-card">
+            <span class="emoji-big">🛠️</span>
+            <h3 data-i18n="tools_title">Useful Tools</h3>
+            <p data-i18n="tools_desc">Utilities, scripts, and productivity boosters.</p>
+        </div>
+        <div class="category-card">
+            <span class="emoji-big">🎮</span>
+            <h3 data-i18n="games_title">Simple Games</h3>
+            <p data-i18n="games_desc">Fun, lightweight games to play and tinker with.</p>
+        </div>
+    </div>
+
+    <div class="getting-started">
+        <h2 data-i18n="getting_started_title">🚀 Getting Started</h2>
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content" data-i18n="step1_desc">
+                <strong>Installation</strong><br />
+                For single-file projects, download the <code>index.html</code>
+                and double‑click to run. For multi‑file projects, use an
+                online HTML runner, paste your code, and add each file,
+                then click <span class="inline-code">Run</span>.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content" data-i18n="step2_desc">
+                <strong>Usage</strong><br />
+                Each project lives in its own directory with specific
+                instructions. Check the individual <code>README</code> files
+                inside each project folder for detailed usage information.
+            </div>
+        </div>
+    </div>
+
+    <div class="license-box">
+        <div class="license-title" data-i18n="license_title">📝 Universal License</div>
+        <p data-i18n="license_desc">
+            All code in this repository is licensed under a universal license
+            that applies to the following … This license applies to all
+            code in this repository unless otherwise specified in individual
+            file headers.
+        </p>
+        <a href="https://github.com/Prog-Tsunmi/About-Me/blob/main/LICENSE"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="license-btn" data-i18n="license_btn">
+            📜 View Full License
+        </a>
+    </div>
+
+    <h2 class="section-title">
+        <span class="icon">🤝</span> <span data-i18n="contributing_title">Contributing</span>
+    </h2>
+    <p style="color:#8b949e; margin-bottom:0.5rem;" data-i18n="contributing_intro">
+        While this is primarily a personal repository, suggestions and
+        improvements are welcome!
+    </p>
+    <ul class="contrib-list">
+        <li data-i18n="contrib_item1">Open issues for bugs or feature requests</li>
+        <li data-i18n="contrib_item2">Submit pull requests for improvements</li>
+        <li data-i18n="contrib_item3">Share your ideas for new tools or games</li>
+    </ul>
+
+    <div class="contact-block">
+        <div class="email">
+            <span data-i18n="contact_email_label">📞</span>
+            <a href="mailto:dengluffy1@gmail.com">dengluffy1@gmail.com</a>
+        </div>
+        <div class="cta-text" data-i18n="contact_cta">
+            Feel free to explore the code &amp; reach out with any questions!
+        </div>
+    </div>
+
+    <div class="footer">
+        <span data-i18n="footer_left"><span class="footer-emoji">🚀</span> Happy enjoying!</span>
+        <span data-i18n="footer_right">© <a href="https://github.com/Prog-Tsunmi/" target="_blank" rel="noopener">Prog-Tsunmi</a> · open source</span>
+    </div>
+
+</div>
+
+<script>
+    const translations = {
+        en: {
+            hero_badge: "📁 Public Repository",
+            hero_title: "Prog-Tsunmi's <br />GitHub Repository",
+            hero_desc: "Welcome to my collection of useful tools and simple games! This repository contains various projects I've developed for learning, experimentation, and practical use. 👋",
+            categories_title: "Project Categories",
+            tools_title: "Useful Tools",
+            tools_desc: "Utilities, scripts, and productivity boosters.",
+            games_title: "Simple Games",
+            games_desc: "Fun, lightweight games to play and tinker with.",
+            getting_started_title: "🚀 Getting Started",
+            step1_desc: "<strong>Installation</strong><br />For single-file projects, download the <code>index.html</code> and double‑click to run. For multi‑file projects, use an online HTML runner, paste your code, and add each file, then click <span class=\"inline-code\">Run</span>.",
+            step2_desc: "<strong>Usage</strong><br />Each project lives in its own directory with specific instructions. Check the individual <code>README</code> files inside each project folder for detailed usage information.",
+            license_title: "📝 Universal License",
+            license_desc: "All code in this repository is licensed under a universal license that applies to the following … This license applies to all code in this repository unless otherwise specified in individual file headers.",
+            license_btn: "📜 View Full License",
+            contributing_title: "🤝 Contributing",
+            contributing_intro: "While this is primarily a personal repository, suggestions and improvements are welcome!",
+            contrib_item1: "Open issues for bugs or feature requests",
+            contrib_item2: "Submit pull requests for improvements",
+            contrib_item3: "Share your ideas for new tools or games",
+            contact_email_label: "📞",
+            contact_cta: "Feel free to explore the code & reach out with any questions!",
+            footer_left: "🚀 Happy enjoying!",
+            footer_right: "© <a href=\"https://github.com/Prog-Tsunmi/\" target=\"_blank\" rel=\"noopener\">Prog-Tsunmi</a> · open source"
+        },
+        zh: {
+            hero_badge: "📁 公共仓库",
+            hero_title: "Prog-Tsunmi 的 <br />GitHub 仓库",
+            hero_desc: "欢迎来到我的实用工具和小游戏合集！这个仓库包含了我为学习、实验和实际应用开发的各种项目。👋",
+            categories_title: "项目分类",
+            tools_title: "🛠️ 实用工具",
+            tools_desc: "工具、脚本和生产效率增强器。",
+            games_title: "🎮 简单游戏",
+            games_desc: "有趣、轻量的游戏，供娱乐和动手修改。",
+            getting_started_title: "🚀 快速开始",
+            step1_desc: "<strong>安装</strong><br />对于单文件项目，下载 <code>index.html</code> 并双击运行。对于多文件项目，使用在线 HTML 运行器，粘贴代码并添加每个文件，然后点击 <span class=\"inline-code\">运行</span>。",
+            step2_desc: "<strong>使用</strong><br />每个项目都位于自己的目录中，并附有具体说明。请查看项目文件夹内的 <code>README</code> 文件以获取详细使用信息。",
+            license_title: "📝 通用许可证",
+            license_desc: "本仓库中的所有代码均根据通用许可证授权，适用于以下情况……除非文件头另有说明，否则本许可证适用于本仓库中的所有代码。",
+            license_btn: "📜 查看完整许可证",
+            contributing_title: "🤝 贡献",
+            contributing_intro: "尽管这主要是个人仓库，但欢迎提出建议和改进！",
+            contrib_item1: "为错误或功能请求提交 issue",
+            contrib_item2: "提交 pull request 以改进代码",
+            contrib_item3: "分享您对新工具或游戏的想法",
+            contact_email_label: "📞",
+            contact_cta: "欢迎浏览代码，如有任何问题请随时联系！",
+            footer_left: "🚀 祝使用愉快！",
+            footer_right: "© <a href=\"https://github.com/Prog-Tsunmi/\" target=\"_blank\" rel=\"noopener\">Prog-Tsunmi</a> · 开源"
+        },
+        es: {
+            hero_badge: "📁 Repositorio Público",
+            hero_title: "Repositorio de <br />Prog-Tsunmi en GitHub",
+            hero_desc: "¡Bienvenido a mi colección de herramientas útiles y juegos sencillos! Este repositorio contiene varios proyectos que he desarrollado para aprender, experimentar y usar en la práctica. 👋",
+            categories_title: "Categorías de Proyectos",
+            tools_title: "🛠️ Herramientas Útiles",
+            tools_desc: "Utilidades, scripts y potenciadores de productividad.",
+            games_title: "🎮 Juegos Sencillos",
+            games_desc: "Juegos divertidos y ligeros para jugar y modificar.",
+            getting_started_title: "🚀 Comenzando",
+            step1_desc: "<strong>Instalación</strong><br />Para proyectos de un solo archivo, descarga <code>index.html</code> y haz doble clic para ejecutarlo. Para proyectos con múltiples archivos, usa un ejecutor HTML en línea, pega el código y agrega cada archivo, luego haz clic en <span class=\"inline-code\">Ejecutar</span>.",
+            step2_desc: "<strong>Uso</strong><br />Cada proyecto está en su propio directorio con instrucciones específicas. Consulta los archivos <code>README</code> individuales dentro de cada carpeta para obtener información detallada.",
+            license_title: "📝 Licencia Universal",
+            license_desc: "Todo el código en este repositorio está bajo una licencia universal que se aplica a lo siguiente … Esta licencia se aplica a todo el código en este repositorio a menos que se indique lo contrario en los encabezados de los archivos.",
+            license_btn: "📜 Ver Licencia Completa",
+            contributing_title: "🤝 Contribuir",
+            contributing_intro: "Aunque este es principalmente un repositorio personal, ¡las sugerencias y mejoras son bienvenidas!",
+            contrib_item1: "Abrir issues para errores o solicitudes de funciones",
+            contrib_item2: "Enviar pull requests para mejoras",
+            contrib_item3: "Compartir ideas para nuevas herramientas o juegos",
+            contact_email_label: "📞",
+            contact_cta: "¡Siéntete libre de explorar el código y contactarnos con cualquier pregunta!",
+            footer_left: "🚀 ¡Disfruta!",
+            footer_right: "© <a href=\"https://github.com/Prog-Tsunmi/\" target=\"_blank\" rel=\"noopener\">Prog-Tsunmi</a> · código abierto"
+        },
+        fr: {
+            hero_badge: "📁 Dépôt Public",
+            hero_title: "Dépôt GitHub de <br />Prog-Tsunmi",
+            hero_desc: "Bienvenue dans ma collection d'outils utiles et de jeux simples ! Ce dépôt contient divers projets que j'ai développés pour apprendre, expérimenter et utiliser en pratique. 👋",
+            categories_title: "Catégories de Projets",
+            tools_title: "🛠️ Outils Utiles",
+            tools_desc: "Utilitaires, scripts et boosters de productivité.",
+            games_title: "🎮 Jeux Simples",
+            games_desc: "Jeux amusants et légers à jouer et à bricoler.",
+            getting_started_title: "🚀 Pour commencer",
+            step1_desc: "<strong>Installation</strong><br />Pour les projets à fichier unique, téléchargez <code>index.html</code> et double-cliquez pour l'exécuter. Pour les projets multi-fichiers, utilisez un exécuteur HTML en ligne, collez le code et ajoutez chaque fichier, puis cliquez sur <span class=\"inline-code\">Exécuter</span>.",
+            step2_desc: "<strong>Utilisation</strong><br />Chaque projet se trouve dans son propre répertoire avec des instructions spécifiques. Consultez les fichiers <code>README</code> individuels dans chaque dossier pour plus de détails.",
+            license_title: "📝 Licence Universelle",
+            license_desc: "Tout le code de ce dépôt est sous licence universelle qui s'applique à ce qui suit … Cette licence s'applique à tout le code de ce dépôt, sauf indication contraire dans les en-têtes de fichiers.",
+            license_btn: "📜 Voir la Licence Complète",
+            contributing_title: "🤝 Contribuer",
+            contributing_intro: "Bien qu'il s'agisse principalement d'un dépôt personnel, les suggestions et améliorations sont les bienvenues !",
+            contrib_item1: "Ouvrir des issues pour des bugs ou des demandes de fonctionnalités",
+            contrib_item2: "Soumettre des pull requests pour des améliorations",
+            contrib_item3: "Partager vos idées pour de nouveaux outils ou jeux",
+            contact_email_label: "📞",
+            contact_cta: "N'hésitez pas à explorer le code et à nous contacter pour toute question !",
+            footer_left: "🚀 Profitez bien !",
+            footer_right: "© <a href=\"https://github.com/Prog-Tsunmi/\" target=\"_blank\" rel=\"noopener\">Prog-Tsunmi</a> · open source"
+        },
+        yue: {
+            hero_badge: "📁 公共倉庫",
+            hero_title: "Prog-Tsunmi 嘅 <br />GitHub 倉庫",
+            hero_desc: "歡迎嚟到我嘅實用工具同小遊戲合集！呢個倉庫包含咗我為學習、實驗同實際應用開發嘅各種項目。👋",
+            categories_title: "項目分類",
+            tools_title: "🛠️ 實用工具",
+            tools_desc: "工具、腳本同生產力增強器。",
+            games_title: "🎮 簡單遊戲",
+            games_desc: "有趣、輕量嘅遊戲，用嚟玩同埋修改。",
+            getting_started_title: "🚀 快速開始",
+            step1_desc: "<strong>安裝</strong><br />對於單檔案項目，下載 <code>index.html</code> 並雙擊執行。對於多檔案項目，使用線上 HTML 執行器，貼上代碼並加入每個檔案，然後撳 <span class=\"inline-code\">執行</span>。",
+            step2_desc: "<strong>使用</strong><br />每個項目都喺自己嘅目錄入面，附有具體說明。請查閱項目資料夾入面嘅 <code>README</code> 檔案以獲取詳細使用資訊。",
+            license_title: "📝 通用許可證",
+            license_desc: "呢個倉庫入面所有代碼都根據通用許可證授權，適用於以下情況……除非檔案頭另有說明，否則呢個許可證適用於呢個倉庫入面所有代碼。",
+            license_btn: "📜 查看完整許可證",
+            contributing_title: "🤝 貢獻",
+            contributing_intro: "雖然呢個主要係個人倉庫，但歡迎提出建議同改進！",
+            contrib_item1: "為錯誤或功能請求提交 issue",
+            contrib_item2: "提交 pull request 以改進代碼",
+            contrib_item3: "分享你對新工具或遊戲嘅諗法",
+            contact_email_label: "📞",
+            contact_cta: "歡迎瀏覽代碼，如有任何問題請隨時聯絡！",
+            footer_left: "🚀 祝使用愉快！",
+            footer_right: "© <a href=\"https://github.com/Prog-Tsunmi/\" target=\"_blank\" rel=\"noopener\">Prog-Tsunmi</a> · 開源"
+        },
+        pt: {
+            hero_badge: "📁 Repositório Público",
+            hero_title: "Repositório GitHub de <br />Prog-Tsunmi",
+            hero_desc: "Bem-vindo à minha coleção de ferramentas úteis e jogos simples! Este repositório contém vários projetos que desenvolvi para aprender, experimentar e usar na prática. 👋",
+            categories_title: "Categorias de Projetos",
+            tools_title: "🛠️ Ferramentas Úteis",
+            tools_desc: "Utilitários, scripts e impulsionadores de produtividade.",
+            games_title: "🎮 Jogos Simples",
+            games_desc: "Jogos divertidos e leves para jogar e modificar.",
+            getting_started_title: "🚀 Começando",
+            step1_desc: "<strong>Instalação</strong><br />Para projetos de arquivo único, baixe o <code>index.html</code> e clique duas vezes para executar. Para projetos com vários arquivos, use um executor HTML online, cole o código e adicione cada arquivo, depois clique em <span class=\"inline-code\">Executar</span>.",
+            step2_desc: "<strong>Uso</strong><br />Cada projeto está em seu próprio diretório com instruções específicas. Consulte os arquivos <code>README</code> individuais dentro de cada pasta para obter informações detalhadas.",
+            license_title: "📝 Licença Universal",
+            license_desc: "Todo o código neste repositório está licenciado sob uma licença universal que se aplica ao seguinte … Esta licença se aplica a todo o código neste repositório, a menos que indicado de outra forma nos cabeçalhos dos arquivos.",
+            license_btn: "📜 Ver Licença Completa",
+            contributing_title: "🤝 Contribuir",
+            contributing_intro: "Embora este seja principalmente um repositório pessoal, sugestões e melhorias são bem-vindas!",
+            contrib_item1: "Abrir issues para bugs ou solicitações de recursos",
+            contrib_item2: "Enviar pull requests para melhorias",
+            contrib_item3: "Compartilhe suas ideias para novas ferramentas ou jogos",
+            contact_email_label: "📞",
+            contact_cta: "Sinta-se à vontade para explorar o código e entrar em contato com qualquer dúvida!",
+            footer_left: "🚀 Aproveite!",
+            footer_right: "© <a href=\"https://github.com/Prog-Tsunmi/\" target=\"_blank\" rel=\"noopener\">Prog-Tsunmi</a> · código aberto"
+        },
+        ko: {
+            hero_badge: "📁 공개 저장소",
+            hero_title: "Prog-Tsunmi의 <br />GitHub 저장소",
+            hero_desc: "유용한 도구와 간단한 게임 컬렉션에 오신 것을 환영합니다! 이 저장소에는 학습, 실험 및 실용적인 사용을 위해 개발한 다양한 프로젝트가 포함되어 있습니다. 👋",
+            categories_title: "프로젝트 카테고리",
+            tools_title: "🛠️ 유용한 도구",
+            tools_desc: "유틸리티, 스크립트 및 생산성 향상 도구.",
+            games_title: "🎮 간단한 게임",
+            games_desc: "재미있고 가벼운 게임을 즐기고 수정해보세요.",
+            getting_started_title: "🚀 시작하기",
+            step1_desc: "<strong>설치</strong><br />단일 파일 프로젝트의 경우 <code>index.html</code>을 다운로드하고 두 번 클릭하여 실행하세요. 여러 파일 프로젝트의 경우 온라인 HTML 실행기를 사용하여 코드를 붙여넣고 각 파일을 추가한 후 <span class=\"inline-code\">실행</span>을 클릭하세요.",
+            step2_desc: "<strong>사용법</strong><br />각 프로젝트는 자체 디렉토리에 있으며 특정 지침이 있습니다. 자세한 사용 정보는 각 프로젝트 폴더 내의 개별 <code>README</code> 파일을 확인하세요.",
+            license_title: "📝 범용 라이선스",
+            license_desc: "이 저장소의 모든 코드는 다음에 적용되는 범용 라이선스에 따라 라이선스가 부여됩니다 … 파일 헤더에 별도로 명시되지 않는 한 이 라이선스는 이 저장소의 모든 코드에 적용됩니다.",
+            license_btn: "📜 전체 라이선스 보기",
+            contributing_title: "🤝 기여",
+            contributing_intro: "주로 개인 저장소이지만 제안과 개선을 환영합니다!",
+            contrib_item1: "버그 또는 기능 요청에 대한 이슈 열기",
+            contrib_item2: "개선 사항에 대한 풀 리퀘스트 제출",
+            contrib_item3: "새로운 도구나 게임에 대한 아이디어 공유",
+            contact_email_label: "📞",
+            contact_cta: "코드를 자유롭게 탐색하고 질문이 있으면 언제든지 문의하세요!",
+            footer_left: "🚀 즐겁게 사용하세요!",
+            footer_right: "© <a href=\"https://github.com/Prog-Tsunmi/\" target=\"_blank\" rel=\"noopener\">Prog-Tsunmi</a> · 오픈소스"
+        },
+        ja: {
+            hero_badge: "📁 公開リポジトリ",
+            hero_title: "Prog-Tsunmi の <br />GitHub リポジトリ",
+            hero_desc: "便利なツールとシンプルなゲームのコレクションへようこそ！このリポジトリには、学習、実験、実用的な使用のために開発したさまざまなプロジェクトが含まれています。👋",
+            categories_title: "プロジェクトカテゴリ",
+            tools_title: "🛠️ 便利なツール",
+            tools_desc: "ユーティリティ、スクリプト、生産性向上ツール。",
+            games_title: "🎮 シンプルなゲーム",
+            games_desc: "楽しくて軽量なゲームで遊んだり改造したりできます。",
+            getting_started_title: "🚀 はじめに",
+            step1_desc: "<strong>インストール</strong><br />単一ファイルプロジェクトの場合は、<code>index.html</code> をダウンロードしてダブルクリックで実行します。複数ファイルプロジェクトの場合は、オンライン HTML ランナーを使用し、コードを貼り付けて各ファイルを追加し、<span class=\"inline-code\">実行</span> をクリックします。",
+            step2_desc: "<strong>使い方</strong><br />各プロジェクトは独自のディレクトリにあり、特定の手順が含まれています。詳細な使用方法については、各プロジェクトフォルダ内の個別の <code>README</code> ファイルを確認してください。",
+            license_title: "📝 ユニバーサルライセンス",
+            license_desc: "このリポジトリ内のすべてのコードは、以下に適用されるユニバーサルライセンスの下でライセンスされています … ファイルヘッダーで別途指定されていない限り、このライセンスはこのリポジトリ内のすべてのコードに適用されます。",
+            license_btn: "📜 完全なライセンスを表示",
+            contributing_title: "🤝 貢献",
+            contributing_intro: "これは主に個人用リポジトリですが、提案や改善は大歓迎です！",
+            contrib_item1: "バグや機能リクエストの issue を開く",
+            contrib_item2: "改善のためのプルリクエストを送信する",
+            contrib_item3: "新しいツールやゲームのアイデアを共有する",
+            contact_email_label: "📞",
+            contact_cta: "コードを自由に探索し、質問があればお気軽にお問い合わせください！",
+            footer_left: "🚀 お楽しみください！",
+            footer_right: "© <a href=\"https://github.com/Prog-Tsunmi/\" target=\"_blank\" rel=\"noopener\">Prog-Tsunmi</a> · オープンソース"
+        }
+    };
+
+    const langSelect = document.getElementById('langSwitcher');
+    const i18nElements = document.querySelectorAll('[data-i18n]');
+
+    function applyLanguage(lang) {
+        if (!translations[lang]) return;
+        const t = translations[lang];
+        i18nElements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (t[key] !== undefined) {
+                el.innerHTML = t[key];
+            }
+        });
+        langSelect.value = lang;
+        localStorage.setItem('preferred_lang', lang);
+        document.documentElement.lang = lang;
+    }
+
+    function getInitialLang() {
+        const stored = localStorage.getItem('preferred_lang');
+        if (stored && translations[stored]) return stored;
+        const browserLang = navigator.language.slice(0, 2);
+        const map = { 'en': 'en', 'zh': 'zh', 'es': 'es', 'fr': 'fr', 'pt': 'pt', 'ko': 'ko', 'ja': 'ja' };
+        const matched = map[browserLang];
+        return matched && translations[matched] ? matched : 'en';
+    }
+
+    langSelect.addEventListener('change', function() {
+        applyLanguage(this.value);
+    });
+
+    const initialLang = getInitialLang();
+    applyLanguage(initialLang);
+</script>
+
+</body>
+</html>
