@@ -1,54 +1,62 @@
-PROG-TSUNMI SOURCE AVAILABLE LICENSE v1.0
+TSUNMI SOURCE AVAILABLE LICENSE v3.1 (2026)
 
-Copyright (c) 2024 Prog-Tsunmi. All rights reserved.
+Copyright (c) 2026 tsunmi. All rights reserved.
+
+Effective Date: September 8th, 2026
 
 Preamble
-This Prog-Tsunmi Source Available License (the "License") governs the use, modification, and distribution of all software, code, and associated documentation files (collectively the "Software") created by and attributed to Prog-Tsunmi. By exercising any rights to the Software, you accept and agree to be bound by the terms of this License.
+This Tsunmi Source Available License (the "License") governs the use, modification, and distribution of all software, code, and associated documentation files (collectively the "Software") created by and attributed to tsunmi. By exercising any rights to the Software, you accept and agree to be bound by the terms of this License.
 
 1. Universal Application
-This License applies universally to every single code file, script, component, and software asset created by Prog-Tsunmi across all repositories, projects, and distributions unless explicitly stated otherwise in the file header.
+This License applies universally to every single code file, script, component, and software asset created by tsunmi across all repositories, projects, and distributions unless explicitly stated otherwise in the file header.
 
 2. Definitions
 - "You" (or "Your") refers to any individual or entity exercising permissions granted by this License.
 - "Use" means to load, execute, display, perform, copy, or run the Software.
-- "Distribution" means any form of sharing, publishing, or transferring the Software or a Derivative Work to a third party.
-- "Derivative Work" means any work, whether in source or object form, that is based on (or derived from) the Software.
-- "Original Prog-Tsunmi Code" refers to the Software as originally authored and distributed by Prog-Tsunmi.
+- "Distribution" means any form of sharing, publishing, or transferring the Software or a Derivative Work to a third party, including but not limited to uploading to public repositories (e.g., GitHub), providing downloads, or offering as a service.
+- "Derivative Work" means any work, whether in source or object form, that is based on (or derived from) the Software, including modifications, enhancements, or adaptations.
+- "Original tsunmi Code" refers to the Software as originally authored and distributed by tsunmi, without any modifications made by You or any third party.
+- "Educational Use" means any use of the Software for teaching, academic research, training, classroom instruction, student projects, or any similar purpose within an educational institution, course, or learning environment, whether formal or informal.
 
-3. No Rights Granted: General Prohibition
-All rights to the Original Prog-Tsunmi Code are expressly reserved by Prog-Tsunmi. Except as explicitly stated in Section 4, you are granted no rights to Use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Original Prog-Tsunmi Code.
+3. Granted Permissions (No Prior Permission Required)
+Subject to the terms of this License, You are granted a worldwide, non-exclusive, non-transferable, and non-sublicensable right to:
+   a) Use the Software for personal, non-commercial, or internal business purposes (provided such use is not Educational Use as defined above).
+   b) Contribute to the Software by submitting bug fixes, enhancements, or other changes to the original repository maintained by tsunmi.
+   c) Fork the Software and create modifications solely for your own personal use or internal business use (again, excluding Educational Use without permission).
+   d) Redistribute (Distribute) verbatim copies of the Original tsunmi Code (i.e., unmodified versions) to any third party, provided that:
+      - You retain all copyright and license notices in their original form.
+      - If the Distribution is made via a public platform such as GitHub, you must explicitly and conspicuously state that the code is originally authored by tsunmi (e.g., "Original by tsunmi").
 
-4. Limited Permissions
-The general prohibition in Section 3 does not apply, and you are granted a limited, worldwide, non-exclusive, non-transferable, and non-sublicensable license to Use the Software, only under one of the following two conditions:
+4. Prohibited Actions (Require Prior Written Permission)
+Any use not explicitly granted in Section 3 is strictly prohibited. Without limiting the foregoing, You may NOT:
 
-A. Free Use: You may Use the Software for personal, non-commercial, or internal business purposes without charge and without the need for prior permission, provided you do not Distribute the Software or any Derivative Work.
+   a) **Educational Use** – Use the Software for any Educational Purpose (as defined in Section 2) without obtaining explicit prior written permission from tsunmi. This restriction applies regardless of any fair use, fair dealing, or similar exceptions provided by law. Any unauthorized Educational Use constitutes a breach of this License and tsunmi reserves the right to take all legal actions available, including but not limited to seeking injunctive relief and takedown of infringing materials.
 
-B. Prior Paid Permission: You may Use the Software for any other purpose, including commercial use or Distribution, only after you have obtained express, prior written permission from Prog-Tsunmi. Such permission is granted at the sole discretion of Prog-Tsunmi and will typically be contingent upon the payment of a license fee.
+   b) Distribute or share any Derivative Work (modified or forked code) to any third party, whether publicly or privately, without explicit prior written permission from tsunmi.
 
-5. Forked and Edited Code Exclusion
-Notwithstanding any other provision in this License, any code that has been forked, modified, edited, or derived from the Original Prog-Tsunmi Code (collectively "Forked Code") is explicitly excluded from the terms of this License. Once code has been forked and modified:
+   c) Resell, sublicense, or commercialize the Software or any Derivative Work without a separate commercial agreement with tsunmi.
 
-- The Forked Code is no longer considered "Original Prog-Tsunmi Code"
-- This License does not apply to the Forked Code
-- The creator of the Forked Code may license their modifications under any terms they choose
-- However, any portions of Original Prog-Tsunmi Code remaining within the Forked Code remain subject to this License
+   d) Use the Software to offer a service to third parties (e.g., as part of a Software-as-a-Service offering) without a separate agreement.
 
-6. Restrictions
-Any use not explicitly permitted under Section 4 is strictly prohibited. Without limiting the generality of the foregoing, you are specifically prohibited from, and may not allow others to:
-- Incorporate the Original Prog-Tsunmi Code into any product or service intended for Distribution without a separate agreement with Prog-Tsunmi.
-- Use the Original Prog-Tsunmi Code to provide a service to third parties (e.g., as part of a Software-as-a-Service offering) without a separate agreement with Prog-Tsunmi.
-- Remove, obscure, or alter any proprietary rights notices (including copyright and trademark notices) contained within the Original Prog-Tsunmi Code.
+   e) Remove, obscure, or alter any proprietary rights notices (including copyright and trademark notices) contained within the Original tsunmi Code.
 
-7. Disclaimer of Warranty
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL PROG-TSUNMI BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+   f) Redistribute the Software (whether original or modified) to GitHub or similar public repositories unless you explicitly state that it is originally made by tsunmi (as required in Section 3.d) and you are only distributing unmodified copies – distribution of modified versions to such platforms is expressly forbidden without permission.
 
-8. Limitation of Liability
-IN NO EVENT WILL PROG-TSUNMI BE LIABLE TO YOU ON ANY LEGAL THEORY FOR ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES ARISING OUT OF THIS LICENSE OR THE USE OF THE SOFTWARE, EVEN IF PROG-TSUNMI HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+5. Permission Requests
+To obtain permission for any of the actions listed in Section 4 (including Educational Use, distribution of modifications, reselling, etc.), or for any other use not explicitly allowed, You must contact tsunmi at:
+   dengluffy1@gmail.com
+Such permission is granted at the sole discretion of tsunmi and may be subject to conditions, including the payment of a license fee.
 
-9. Termination
+6. Disclaimer of Warranty
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL TSUNMI BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+7. Limitation of Liability
+IN NO EVENT WILL TSUNMI BE LIABLE TO YOU ON ANY LEGAL THEORY FOR ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES ARISING OUT OF THIS LICENSE OR THE USE OF THE SOFTWARE, EVEN IF TSUNMI HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+8. Termination
 This License and the rights granted hereunder will terminate automatically upon any breach by you of the terms of this License. Upon termination, you must destroy all copies of the Software in your possession or control.
 
-10. Miscellaneous
+9. Miscellaneous
 This License constitutes the entire agreement between the parties concerning the Software. If any provision of this License is deemed unenforceable, the remaining provisions shall remain in full force and effect.
 
-For commercial licensing inquiries, contact: progtsunmi@amz.vsmailpro.com
+For commercial licensing, educational permissions, or other inquiries, contact: dengluffy1@gmail.com
