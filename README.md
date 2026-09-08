@@ -33,7 +33,7 @@ While this is primarily a personal repository, suggestions and improvements are 
 
 ## 📞 Contact
 
-- email progtsunmi@amz.vsmailpro.com or dengluffy1@gmail.com for urgency letters
+- Email dengluffy1@gmail.com for contact
 - Feel free to explore the code and reach out with any questions!
 
 ---
